@@ -1385,11 +1385,11 @@ The above steps are the process of adding a UIView. Next we will add `SearchBar`
 
 ![](./search/handlebar6.png)
 
-![](./search/handlebar 7.png)
+![](./search/handlebar7.png)
 
-![](./search/handlebar 8.png)
+![](./search/handlebar8.png)
 
-![](./search/handlebar 9.png)
+![](./search/handlebar9.png)
 
 The above steps show how to arrange `SearchBar` and `Handle` images using Autolayout.
 
