@@ -23,19 +23,19 @@ Before getting started, we will need the following:
 
 I will describe the process of creating a project and installing a library and creating a Parse account.
 
-![Create New Project](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/xcodeProject.png)
+![Create New Project](./xcodeProject.png)
 
 Run xcode and select the template.
 
 
 
-![pod init](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/podInit.png)
+![pod init](./podInit.png)
 
 Open Terminal and navigate to the folder where you created the project. Then run pod init.
 
 
 
-![xcworkspace](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/xcwork.png)
+![xcworkspace](./xcwork.png)
 
 When you open the project folder, you can see that the xcworkspace file has been created. Let's open this file.
 
@@ -57,17 +57,17 @@ end
 
 If you look at the list of files in the left panel, you will see the podfile. Please select the file and write as above.
 
-![Pod Install](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/podInstall.png)Go back to the terminal and run the pod install command.
+![Pod Install](./podInstall.png)Go back to the terminal and run the pod install command.
 
 
 
-![LoginView](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/loginview.jpg)
+![LoginView](./loginview.jpg)
 
-![Segue](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/segue.png)
+![Segue](./segue.png)
 
 Connect LoginViewController and SignUpViewController using Segue.
 
-![Storyboard](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/storyboard.png)
+![Storyboard](./storyboard.png)
 
 We have set the viewcontroller for login and signup.
 
@@ -81,17 +81,17 @@ We have finished installing the necessary libraries for the project. Now we will
 
 Let's create an account.
 
-![Create Parse App](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/createParseApp.png)
+![Create Parse App](./createParseApp.png)
 
 Let's create a Parse app.
 
-![Parse Setting](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/clientKey.png)
+![Parse Setting](./clientKey.png)
 
 When you enter the core settings menu, you can see the **applicationID** and **clientKey** information. Do not use the applicationId and clientkey shown in the picture, but use the key shown in the project you created.
 
 
 
-![Dashboard](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/dashboard.png)
+![Dashboard](./dashboard.png)
 
 Let's create a database in advance for the app. For Parse Server, User Class is created by default. I will show you how to create a **MyPlace** Class to store a place on the server.
 
@@ -99,7 +99,7 @@ When you select Dashboard, click **create class** shown in the upper left corner
 
 
 
-![MyRoute Object](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/createMyRoute.png)
+![MyRoute Object](./createMyRoute.png)
 
 Select Custom for the class type and enter the name MyPlace.
 
@@ -120,7 +120,7 @@ The **MyPlace** class has the following default fields:
 
 
 
-![Add New column](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/newColumn.png)
+![Add New column](./newColumn.png)
 
 | Field    |       Type        |
 | -------- | :---------------: |
@@ -144,7 +144,7 @@ The five fields just added are described below:
 
 `owner` is used to store which user created MyRoute.
 
-![Create Owner](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/owner.png)
+![Create Owner](./owner.png)
 
 When you add an owner field to MyRoute, you need to specify it as a User pointer, unlike the other fields.
 
@@ -154,7 +154,7 @@ Now it is all set. Go back to xcode and create an account and login.
 
 To use the Parse Server described above, we need to create two Swift files for User and MyPlace.
 
-![model](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/modelswift.png)
+![model](./modelswift.png)
 
 Select swift and create a new file.
 
@@ -411,7 +411,7 @@ This code is executed when the SignIn button is tapped on the LoginViewControlle
 
 This code is executed when the SignUp button is tapped on the SignUpViewController. When signup is complete, go back to LoginViewController.
 
-![Login](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/login.gif)
+![Login](./login.gif)
 
 Wow, We finally completed the login and SignUp functions. Now We will implement the part that stores my location and information in Parse Server, and finally We will create a MapViewController using the Pulley library.
 
@@ -419,13 +419,13 @@ Wow, We finally completed the login and SignUp functions. Now We will implement 
 
 Now let's learn how to store information about places in Parse Server where I am currently. 
 
-![FirstVC](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/firstvc.png)
+![FirstVC](./firstvc.png)
 
 FirstViewController's UI is configured as above to upload address, photo, and place names.
 
 
 
-![Info.plist](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/infolist.png)
+![Info.plist](./infolist.png)
 
 ```
 <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -712,13 +712,13 @@ Before presenting ImagePickerController, make sure that you have access to the u
 
 Congratulations! You are now ready to store your data on Parse Server.
 
-![Upload](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/upload.gif)
+![Upload](./upload.gif)
 
 Let's build and run, and We can check that the information about the place is stored in Parse Server successfully.
 
 
 
-![myplace saved](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/myplace.png)
+![myplace saved](./myplace.png)
 
 Try connecting to Parse Server and see if the data we entered is stored in the database. We confirmed that it was properly stored as above. Now let's create MapView, the last step of this tutorial!
 
@@ -726,57 +726,57 @@ Try connecting to Parse Server and see if the data we entered is stored in the d
 
 First we will go to Storyboard and set Autolayout for MapView. Our app has `FirstViewController` and `SecondViewController` associated with the `Tab controller`. `FirstViewController` was used to store the `MyPlace` described in the previous step. `SecondViewController` will be used for MapView.
 
-![SecondVC](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/secondVC.png)
+![SecondVC](./mapview/secondVC.png)
 
 First, let's choose `SecondViewController`.
 
 
 
-![Change to Pulley](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/secondVC change to Pulley.png)
+![Change to Pulley](./mapview/secondVC change to Pulley.png)
 
 Change the class of `SecondViewController` to `PulleyViewController` as shown in the upper right.
 
 
 
-![ContainerView](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/containerView.png)
+![ContainerView](./mapview/containerView.png)
 
 Add two `Container Views` to `SecondViewController`.
 
-![ContainerView](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/selectContainerView.png)
+![ContainerView](./mapview/selectContainerView.png)
 
 Name the two `Container Views` as `Primary Container` and `Drawer Conatainer`. `Primary Container` will be used as a `MapView` and `Drawer Container` will be used as a `Table View`.
 
 I will now explain how to set up Autolayout with an screenshot. Take a look at the following screenshots below and follow the Autolayout settings.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step1.png)
+![](./mapview/step1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step2.png)
+![](./mapview/step2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step3.png)
+![](./mapview/step3.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step4.png)
+![](./mapview/step4.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step5.png)
+![](./mapview/step5.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step6.png)
+![](./mapview/step6.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step7.png)
+![](./mapview/step7.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step8.png)
+![](./mapview/step8.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step9.png)
+![](./mapview/step9.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/step10.png)
+![](./mapview/step10.png)
 
 You have now finished the basic Autolayout settings. 
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/createVC.png)
+![](./mapview/createVC.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/mapVC.png)
+![](./mapview/mapVC.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/searchVC.png)
+![](./mapview/searchVC.png)
 
 Create a UIViewController associated with the Primary Container and the Drawer Container respectively. We just created two new UIViewControllers.
 
@@ -784,29 +784,29 @@ Create a UIViewController associated with the Primary Container and the Drawer C
 - `SearchViewController` : This is the ViewController associated with the Drawer Container.
 - ​
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/overviewStoryboard_step1.png)
+![](./mapview/overviewStoryboard_step1.png)
 
 The overall configuration of `ViewController` is as above. Before applying a detailed UI, We will simply check that the `Pulley ViewController` is working properly.
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/primaryContainer.png)
+![](./mapview/primaryContainer.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/primaryContainer_outlet.png)
+![](./mapview/primaryContainer_outlet.png)
 
 To make `PulleyViewController` work properly, connect the `Referencing Outlet` like above.
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/drawerContainer.png)
+![](./mapview/drawerContainer.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/drawerContainer_outlet.png)
+![](./mapview/drawerContainer_outlet.png)
 
 `DrawerContainer` also connects `Referencing Outlet` like `Primary Container`. The basic preparation for using `Pulley ViewController` is now complete.
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/map.gif)
+![](./mapview/map.gif)
 
 This is what we have done so far. As you can see above, the `Primary Container` displays a `MapView` and the `Drawer Container` is a mint color area.
 
@@ -817,19 +817,19 @@ Let's move on to `Primay Container` a bit more. Here are the features that will 
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/mapCapabilities.png)
+![](./mapview/mapCapabilities.png)
 
 In order to use the function to display the current position on the map, it is necessary to set it as shown in the figure above.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/buttonPosition.png)
+![](./mapview/buttonPosition.png)
 
 Sets the location of the button that performs the function to update the current position in MapViewController.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/reverseItem.png)
+![](./mapview/reverseItem.png)
 
 Select Bottom Constraint for Button and select **Reverse First and Second Item**
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/bottomConstraint.png)
+![](./mapview/bottomConstraint.png)
 
 Create an Outlet for the Bottom Constraint. This is an important variable to be used to prevent the `Location Button` from being hidden when the `Drawer` moves up and down.
 
@@ -943,7 +943,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 Almost the same as the code described earlier in `FirstViewController`. One difference is that when the Location information is updated, the center of the map is updated based on the current location.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/map2.gif)
+![](./mapview/map2.gif)
 
 This is the result of running the code described above. First, when the map is loaded, the center of the map is updated based on the current location. When the drawer moves up and down, the `Location Button` is also moved so that it keeps a constant distance based on the top of the drawer. Finally, when you tap the `Location Button`, the center of the map is updated.
 
@@ -953,7 +953,7 @@ This is the result of running the code described above. First, when the map is l
 
 Let's save three places in the city of London and mark the route on the map.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/latlon.png) 
+![](./mapview/latlon.png) 
 
 You can see latitude and longitude as above by selecting three places in London city from [latlong.net](https://www.latlong.net/) 
 
@@ -961,7 +961,7 @@ Let's save the place three times in FirstViewController. However, our app will a
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/mapview/updatelatlon.png)
+![](./mapview/updatelatlon.png)
 
 Connect to Parse Server and modify the Location value of MyPlace to the value confirmed by [latlong.net](https://www.latlong.net/)
 
@@ -1347,7 +1347,7 @@ To display the path on the map, you need to call `mapView (_ mapView: MKMapView,
 
 The `MapViewController` implementation is now complete. Before you implement `SearchViewController`, check out what you have developed so far.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/map3.gif)
+![](./map3.gif)
 
 Amazing! All three places we have saved on the map are displayed correctly. Not only that, but all the paths are well marked. 
 
@@ -1357,121 +1357,121 @@ Now, finally, let's implement a part of searching around a place like Apple Map.
 
 In this section, we will configure the basic UI using SearchBar and TableView. And we will use MKLocalSearch to search for nearby restaurants. First, let's set the UI of SearchViewController.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchView1.png)
+![](./search/searchView1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchView2.png)
+![](./search/searchView2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchView3.png)
+![](./search/searchView3.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchView4.png)
+![](./search/searchView4.png)
 
 The above steps are the process of adding a UIView. Next we will add `SearchBar`
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchbar1.png)
+![](./search/searchbar1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchbar2.png)
+![](./search/searchbar2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar1.png)
+![](./search/handlebar1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar2.png)
+![](./search/handlebar2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar3.png)
+![](./search/handlebar3.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar4.png)
+![](./search/handlebar4.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar5.png)
+![](./search/handlebar5.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar6.png)
+![](./search/handlebar6.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar 7.png)
+![](./search/handlebar 7.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar 8.png)
+![](./search/handlebar 8.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/handlebar 9.png)
+![](./search/handlebar 9.png)
 
 The above steps show how to arrange `SearchBar` and `Handle` images using Autolayout.
 
 Next, place the `TableView` at the bottom of the `SearchBar`
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table1.png)
+![](./search/table1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table2.png)
+![](./search/table2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table3.png)
+![](./search/table3.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table4.png)
+![](./search/table4.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table5.png)
+![](./search/table5.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table6.png)
+![](./search/table6.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/table7.png)
+![](./search/table7.png)
 
 We have finished placing the `TableVeiw`. Now we will drag and drop the `TableViewCell` onto the `TableView` and place a `UILabel` to display the `name`, `address`, and `distance` of the place.
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell1.png)
+![](./search/tablecell1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell2.png)
+![](./search/tablecell2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/stackview.png)
+![](./search/stackview.png)
 
 Place two `UILabels` in the `UITableViewCell` and click `Embeded in StackView`
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell3.png)
+![](./search/tablecell3.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell4.png)
+![](./search/tablecell4.png)
 
 Set the `UILabel`'s Font to display the name of the place as **Bold**
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell5.png)
+![](./search/tablecell5.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/stackview.png)
+![](./search/stackview.png)
 
 Select the `StackView` created above and the newly added `UILabel` and click `Embeded in StackView`.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell6.png)
+![](./search/tablecell6.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell7.png)
+![](./search/tablecell7.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell8.png)
+![](./search/tablecell8.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/address1.png)
+![](./search/address1.png)
 
 Select the `UILabel` to display the Address and set the Lines to 2 as shown in the upper right corner. If the address is long, it can be displayed in 2 lines.
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell9.png)
+![](./search/tablecell9.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tablecell10.png)
+![](./search/tablecell10.png)
 
 I have almost completed the `UILabel` configuration so far. Now let's add a `UIView` to seperate the cell.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/border1.png)
+![](./search/border1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/border2.png)
+![](./search/border2.png)
 
 Now let's create a class for `UITableViewCell`.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/class1.png)
+![](./search/class1.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/class2.png)
+![](./search/class2.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/class3.png)
+![](./search/class3.png)
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/class4.png)
+![](./search/class4.png)
 
 Finally, We will set up the Delegate of `TableView` and `SearchBar` and write the code.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/tableviewDelegate.png)
+![](./search/tableviewDelegate.png)
 
 Set the DataSource and Delegate as above.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/searchDelegate.png)
+![](./search/searchDelegate.png)
 
 We also sets the delegate for SearchBar as shown above.
 
@@ -1779,7 +1779,7 @@ In the code above, we use `searchPlaceResults` when searching for a place throug
 
 Wow finally made it all. Let's run our app.
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/map4.gif)
+![](./search/map4.gif)
 
 As you can see, The functionality we want is implemented correctly. It was a really long tutorial, but thanks for reading so far.
 
@@ -1835,7 +1835,7 @@ Now all implementations are complete. Let's run the app again and check it out.
 
 
 
-![](/Users/GurumCEO/Dropbox (Personal)/Typora/Apple Map/search/mapFinal.gif)
+![](./search/mapFinal.gif)
 
 That's all. I put the project code on github.
 
